@@ -1,12 +1,12 @@
 import Foundation
 import UIKit
 
-struct ApiModel<T: Codable, U: Codable>: Codable {
+public struct ApiModel<T: Codable, U: Codable>: Codable {
     var ch: T?
     var data: U?
 }
 
-struct ApiRequestModel<T: Codable>: Codable {
+public struct ApiRequestModel<T: Codable>: Codable {
     var ch: APIModel.ChannelRequestCommonInfo
     var data: T?
 
@@ -16,7 +16,7 @@ struct ApiRequestModel<T: Codable>: Codable {
     }
 }
 
-struct ApiResponseModel<T: Codable>: Codable {
+public struct ApiResponseModel<T: Codable>: Codable {
     var ch: APIModel.ChannelResponseCommonInfo
     var data: T?
 
@@ -30,9 +30,9 @@ struct ApiResponseModel<T: Codable>: Codable {
     }
 }
 
-enum APIModel {
+public enum APIModel {
 
-    struct ChannelRequestCommonInfo: Codable {
+    public struct ChannelRequestCommonInfo: Codable {
 
         var transactionType: String?
         var ipAddress: String?
@@ -71,7 +71,7 @@ enum APIModel {
         }
     }
 
-    struct ChannelResponseCommonInfo: Codable {
+    public struct ChannelResponseCommonInfo: Codable {
         var tr_type: String?
         var ip: String?
         var mac: String?

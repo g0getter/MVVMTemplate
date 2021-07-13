@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-enum Login {
+public enum Login {
     // MARK: - Ch
     struct ReqCh: Codable {
         var tr_type: String?
@@ -30,14 +30,14 @@ enum Login {
     }
 
     // MARK: - Linprcs
-    enum Linprcs {
+    public enum Linprcs {
         struct Request: Codable {
             var afcmId: String
             var apnsId: String
             var appPushId: String
             var mbphUniqNo: String
 
-            enum CodingKeys: String, CodingKey {
+            public enum CodingKeys: String, CodingKey {
                 case afcmId = "afcm_id"
                 case apnsId = "apns_id"
                 case appPushId = "app_push_id"
@@ -56,7 +56,7 @@ enum Login {
             var custId: String?
             var authToken: String?
 
-            enum CodingKeys: String, CodingKey {
+            public enum CodingKeys: String, CodingKey {
                 case custId = "myd_cust_id"
                 case authToken = "x_auth_token"
             }
@@ -64,7 +64,7 @@ enum Login {
     }
 
     // MARK: - VerifyLoginTranWithoutPretran
-    enum VerifyLoginTranWithoutPretran {
+    public enum VerifyLoginTranWithoutPretran {
         struct Request: Codable {
             var bioCrtcSuccYn: String?
             var bioInfoMdfcYn: String
@@ -77,7 +77,7 @@ enum Login {
             var rqstChnlDcd: String
             var usrCctnMctlId: String
 
-            enum CodingKeys: String, CodingKey {
+            public enum CodingKeys: String, CodingKey {
                 case bioCrtcSuccYn = "bio_crtc_succ_yn"
                 case bioInfoMdfcYn = "bio_info_mdfc_yn"
                 case certSeqNo = "cert_seq_no"
@@ -103,7 +103,7 @@ enum Login {
             var custNo: String?
             var errCd: String
 
-            enum CodingKeys: String, CodingKey {
+            public enum CodingKeys: String, CodingKey {
                 case bioCrtcDcd = "bio_crtc_dcd"
                 case bioInfoMdfcYn = "bio_info_mdfc_yn"
                 case cprsPubKey = "cprs_pub_key"
@@ -119,14 +119,14 @@ enum Login {
     }
 
     // MARK: - Hist
-//    enum Hist {
+//    public enum Hist {
 //        struct Request: Codable {
 //            var sessionId: String
 //            var mbleTmnlId: String
 //            var custId: String
 //            var osCode: String
 //
-//            enum CodingKeys: String, CodingKey {
+//            public enum CodingKeys: String, CodingKey {
 //                case sessionId = "lin_sess_id"
 //                case mbleTmnlId = "mble_tmnl_id"
 //                case custId = "myd_cust_id"
@@ -144,14 +144,14 @@ enum Login {
 //        struct Response: Codable {
 //            var successMessage: String?
 //
-//            enum CodingKeys: String, CodingKey {
+//            public enum CodingKeys: String, CodingKey {
 //                case successMessage = "success_msg"
 //            }
 //        }
 //    }
 
     // MARK: - Pin
-    enum Pin {
+    public enum Pin {
         struct ReqData: Codable {
             var cust_no: String?
             var msb_vrsn_vl: String?
@@ -168,7 +168,7 @@ enum Login {
     }
 
     // MARK: - Token
-    enum Token {
+    public enum Token {
         struct ReqData: Codable {
             var myd_cust_id: String?
             var myd_cust_pwd: String?
