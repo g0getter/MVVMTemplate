@@ -1,8 +1,9 @@
 import Foundation
+import UIKit
 
-enum Login {
+public enum Login {
     // MARK: - Ch
-    struct ReqCh: Codable {
+    public struct ReqCh: Codable {
         var tr_type: String?
         var ip: String?
         var mac: String?
@@ -13,7 +14,7 @@ enum Login {
         var sphn_os_dvsn_cd: String?
     }
 
-    struct ResCh: Codable {
+    public struct ResCh: Codable {
         var tr_type: String?
         var ip: String?
         var mac: String?
@@ -29,14 +30,14 @@ enum Login {
     }
 
     // MARK: - Linprcs
-    enum Linprcs {
-        struct Request: Codable {
+    public enum Linprcs {
+        public struct Request: Codable {
             var afcmId: String
             var apnsId: String
             var appPushId: String
             var mbphUniqNo: String
 
-            enum CodingKeys: String, CodingKey {
+            public enum CodingKeys: String, CodingKey {
                 case afcmId = "afcm_id"
                 case apnsId = "apns_id"
                 case appPushId = "app_push_id"
@@ -51,11 +52,11 @@ enum Login {
             }
         }
 
-        struct Response: Codable {
+        public struct Response: Codable {
             var custId: String?
             var authToken: String?
 
-            enum CodingKeys: String, CodingKey {
+            public enum CodingKeys: String, CodingKey {
                 case custId = "myd_cust_id"
                 case authToken = "x_auth_token"
             }
@@ -63,8 +64,8 @@ enum Login {
     }
 
     // MARK: - VerifyLoginTranWithoutPretran
-    enum VerifyLoginTranWithoutPretran {
-        struct Request: Codable {
+    public enum VerifyLoginTranWithoutPretran {
+        public struct Request: Codable {
             var bioCrtcSuccYn: String?
             var bioInfoMdfcYn: String
             var certSeqNo: String
@@ -76,7 +77,7 @@ enum Login {
             var rqstChnlDcd: String
             var usrCctnMctlId: String
 
-            enum CodingKeys: String, CodingKey {
+            public enum CodingKeys: String, CodingKey {
                 case bioCrtcSuccYn = "bio_crtc_succ_yn"
                 case bioInfoMdfcYn = "bio_info_mdfc_yn"
                 case certSeqNo = "cert_seq_no"
@@ -90,7 +91,7 @@ enum Login {
             }
         }
 
-        struct Response: Codable {
+        public struct Response: Codable {
             var bioCrtcDcd: String?
             var bioInfoMdfcYn: String?
             var cprsPubKey: String?
@@ -102,7 +103,7 @@ enum Login {
             var custNo: String?
             var errCd: String
 
-            enum CodingKeys: String, CodingKey {
+            public enum CodingKeys: String, CodingKey {
                 case bioCrtcDcd = "bio_crtc_dcd"
                 case bioInfoMdfcYn = "bio_info_mdfc_yn"
                 case cprsPubKey = "cprs_pub_key"
@@ -118,40 +119,40 @@ enum Login {
     }
 
     // MARK: - Hist
-    enum Hist {
-        struct Request: Codable {
+    public enum Hist {
+        public struct Request: Codable {
             var sessionId: String
             var mbleTmnlId: String
-            var custId: String
+//            var custId: String
             var osCode: String
 
-            enum CodingKeys: String, CodingKey {
+            public enum CodingKeys: String, CodingKey {
                 case sessionId = "lin_sess_id"
                 case mbleTmnlId = "mble_tmnl_id"
-                case custId = "myd_cust_id"
+//                case custId = "myd_cust_id"
                 case osCode = "sphn_os_dvsn_cd"
             }
 
             init() {
                 sessionId = ""
                 mbleTmnlId = ""
-                custId = UserDefaults.standard.myCustId
+//                custId = UserDefaults.standard.myCustId
                 osCode = "02"
             }
         }
 
-        struct Response: Codable {
+        public struct Response: Codable {
             var successMessage: String?
 
-            enum CodingKeys: String, CodingKey {
+            public enum CodingKeys: String, CodingKey {
                 case successMessage = "success_msg"
             }
         }
     }
 
     // MARK: - Pin
-    enum Pin {
-        struct ReqData: Codable {
+    public enum Pin {
+        public struct ReqData: Codable {
             var cust_no: String?
             var msb_vrsn_vl: String?
             var pin_data_con: String?
@@ -159,7 +160,7 @@ enum Login {
             var usr_cctn_mctl_id: String?
         }
 
-        struct ResData: Codable {
+        public struct ResData: Codable {
             var err_cd: String?
             var pin_eror_cnt: String?
             var pin_max_eror_alwn_cnt: String?
@@ -167,13 +168,13 @@ enum Login {
     }
 
     // MARK: - Token
-    enum Token {
-        struct ReqData: Codable {
+    public enum Token {
+        public struct ReqData: Codable {
             var myd_cust_id: String?
             var myd_cust_pwd: String?
         }
 
-        struct ResData: Codable {
+        public struct ResData: Codable {
             var x_auth_token: String?
         }
     }

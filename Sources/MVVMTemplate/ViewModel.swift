@@ -8,12 +8,12 @@
 //import RxSwift
 //import RxCocoa
 
-protocol LoginViewModelType {
+public protocol LoginViewModelType {
     var inputs: LoginViewModelInputs { get }
 //    var outputs: LoginViewModelOutputs { get }
 }
 
-protocol LoginViewModelInputs {
+public protocol LoginViewModelInputs {
     func viewDidLoadInput()
     func viewDidAppearInput()
     func viewDidDisappearInput()
@@ -25,6 +25,48 @@ protocol LoginViewModelInputs {
     func transKeyReturnInput(_ transKey: String?, count: Int)
 }
 
+public class LoginViewModel: LoginViewModelType, LoginViewModelInputs {
+    public func viewDidLoadInput() {
+            
+    }
+    
+    public func viewDidAppearInput() {
+                
+    }
+    
+    public func viewDidDisappearInput() {
+        
+    }
+    
+    public func verifyBioSignature() {
+        
+    }
+    
+    public func apiLoginLinprcsInput(_ params: ApiRequestModel<Login.Linprcs.Request>) {
+        
+    }
+    
+    public func apiLoginTokenInput(_ inData: ApiModel<Login.ReqCh, Login.Token.ReqData>) {
+        
+    }
+    
+    public func apiLoginPinInput(_ inData: ApiModel<Login.ReqCh, Login.Pin.ReqData>) {
+        
+    }
+    
+    public func transKeyInput(_ transKey: String?, count: Int) {
+        
+    }
+    
+    public func transKeyReturnInput(_ transKey: String?, count: Int) {
+        
+    }
+    
+
+    // MARK: - protocol ViewModelType impl
+    public var inputs: LoginViewModelInputs { self }
+//    var outputs: LoginViewModelOutputs { self }
+}
 //protocol LoginViewModelOutputs {
 //    var viewDidLoadOutput: PublishSubject<Void> { get }
 //    var viewDidAppearOutput: PublishSubject<Void> { get }
