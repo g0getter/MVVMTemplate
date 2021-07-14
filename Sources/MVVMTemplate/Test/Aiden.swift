@@ -11,7 +11,7 @@ public protocol Aiden {
     
 }
 
-public class AidenMini: Aiden {
+open class AidenMini: Aiden {
     public var name: String = "Aiden mini"
     
     public func eating() {
@@ -19,3 +19,4 @@ public class AidenMini: Aiden {
     }
     
 }
+
